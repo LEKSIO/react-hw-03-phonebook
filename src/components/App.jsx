@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
+import { SectionWrapper } from './SectionWrapper/SectionWrapper';
 
 export class App extends Component {
   state = {
@@ -7,6 +8,10 @@ export class App extends Component {
     filter: '',
   };
   render() {
-    return <h2>Contacts</h2>;
+    return (
+      <SectionWrapper title="Phonebook">
+        <h2>Contacts</h2>;
+      </SectionWrapper>
+    );
   }
 }
