@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import css from './ContactsForm.module.css';
 
-class ContactsForm extends Component {
+export class ContactsForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const name = e.currentTarget.elements.name.value;
@@ -34,5 +34,3 @@ class ContactsForm extends Component {
     );
   }
 }
-
-export { ContactsForm };
