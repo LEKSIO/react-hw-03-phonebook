@@ -1,4 +1,4 @@
-const Contact = ({ id, name, number, deleteContact }) => (
+export const Contact = ({ contact: { name, number, id }, deleteContact }) => (
   <li>
     {name}: {number}
     <button type="button" onClick={() => deleteContact(id)}>
@@ -6,4 +6,3 @@ const Contact = ({ id, name, number, deleteContact }) => (
     </button>
   </li>
 );
-export { Contact };

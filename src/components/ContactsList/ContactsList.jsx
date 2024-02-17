@@ -3,12 +3,10 @@ import css from './Contact.module.css';
 
 export const ContactsList = ({ contacts, deleteContact }) => (
   <ul className={css['contacts-list']}>
-    {contacts.map(({ id, name, number }) => (
+    {contacts.map(contact => (
       <Contact
-        key={id}
-        id={id}
-        name={name}
-        number={number}
+        key={contact.id}
+        contact={contact}
         deleteContact={deleteContact}
       />
     ))}
