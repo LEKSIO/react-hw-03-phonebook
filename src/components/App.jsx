@@ -5,11 +5,24 @@ import { ContactsForm } from './ContactsForm/ContactsForm';
 import { ContactsList } from './ContactsList/ContactsList';
 import { ContactsListFilter } from './ContactsListFilter/ContactsListFilter';
 
+const STORAGE_KEY = 'Contacts_array';
+
 export class App extends Component {
   state = {
     contacts: [],
     filter: '',
   };
+
+  componentDidMount() {
+    const contacts = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    contacts && this.setState({ contacts });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.contacts !== prevState.contacts) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(this.state.contacts));
+    }
+  }
 
   hasNameDuplicate = name =>
     this.state.contacts.some(

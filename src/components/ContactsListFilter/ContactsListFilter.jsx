@@ -1,4 +1,4 @@
-const ContactsListFilter = ({ filter, handleChangeFilter }) => (
+export const ContactsListFilter = ({ filter, handleChangeFilter }) => (
   <div>
     <p>Find contacts by name</p>
     <input
@@ -9,4 +9,3 @@ const ContactsListFilter = ({ filter, handleChangeFilter }) => (
     />
   </div>
 );
-export { ContactsListFilter };
